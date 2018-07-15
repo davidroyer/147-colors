@@ -11,12 +11,13 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^1.0.0",
-    "@nuxtjs/axios": "^5.0.0"
+    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/pwa": "^2.0.8",
+    "nuxt": "^1.0.0"
   },
   "devDependencies": {
-    "cross-env": "^5.0.1",
     "autoprefixer": "^7.1.6",
+    "cross-env": "^5.0.1",
     "tailwindcss": "^0.1.3"
   }
 }

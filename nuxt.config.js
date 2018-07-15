@@ -34,8 +34,14 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
-  modules: [],
+  modules: ["@nuxtjs/pwa"],
 
+  /*
+  ** Customize app manifest
+  */
+  manifest: {
+    theme_color: "#3B8070"
+  },
   /*
   ** Build configuration
   */
