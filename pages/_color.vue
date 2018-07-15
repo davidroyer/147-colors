@@ -2,28 +2,17 @@
   <div class="color" :style="{backgroundColor: color.name}">
     <div class="container">
       <h1 class="title" v-text="color.name"></h1>
-      <h2 class="grid-link"><nuxt-link to="/"> <-- Back</nuxt-link></h2>
+      <h2 class="subtitle"><nuxt-link to="/">Back</nuxt-link></h2>
     </div>
   </div>
 </template>
 
 <script>
-import colors from "~/data/colors.json";
-
 export default {
-  asyncData({ params, payload }, callback) {
-    let color = colors.find(color => color.name === params.color);
-    if (color) {
-      callback(null, { color });
-    } else {
-      callback({ statusCode: 404, message: "Color not found" });
-    }
+  asyncData({ store, params, payload }, callback) {
+    let color = store.state.colors.find(color => color.name === params.color);
+    callback(null, { color });
   }
-  // async asyncData({ app, params }) {
-  //   const color = colors.find(color => color.name === params.color);
-  //
-  //   return { color };
-  // }
 };
 </script>
 
@@ -39,22 +28,19 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-  flex: 1 1 100%;
-}
+
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
+  font-size: 2rem;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
+  flex: 1 1 100%;
+  margin-top: 2rem;
+}
+.subtitle a {
+  text-decoration: none;
+  border-bottom: 2px solid grey;
 }
 .links {
   padding-top: 15px;

@@ -1,17 +1,5 @@
 const pkg = require("./package");
-// const axios = require("axios");
-// let colorsData = JSON.parse(
-//   require("fs").readFileSync("static/data/db.json", "utf8")
-// );
 
-// const api = axios.create({
-//   baseURL: "http://localhost:3000/data"
-// });
-// api.get("db.json");
-
-//or
-
-// axios.get("/data/db.json");
 module.exports = {
   mode: "universal",
 
@@ -46,18 +34,7 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
-  modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    "@nuxtjs/axios"
-  ],
-
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // baseURL: "http://localhost:3000/data"
-    // See https://github.com/nuxt-community/axios-module#options
-  },
+  modules: [],
 
   /*
   ** Build configuration
@@ -75,11 +52,4 @@ module.exports = {
       callback(null, routes);
     }
   }
-  // generate: {
-  //   routes: function() {
-  //     return colorsData.map(color => {
-  //       return "/" + color.name;
-  //     });
-  //   }
-  // }
 };
