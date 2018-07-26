@@ -1,7 +1,7 @@
 <template>
   <div class="color" :style="{backgroundColor: color.name}">
     <div class="container">
-      <h1 class="title" :style="{color: labelColor}" v-text="color.name"></h1>
+      <h1 class="color-name" :style="{color: labelColor}" v-text="color.name"></h1>
       <h2 class="subtitle">
         <nuxt-link :style="{color: labelColor}" to="/">&larr; Back To Color Grid</nuxt-link>
       </h2>
@@ -35,7 +35,7 @@ export default {
   margin-right: auto;
 }
 
-.title {
+.color-name {
   background: none;
   text-transform: capitalize;
   font-weight: 600;
