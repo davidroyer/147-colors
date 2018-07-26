@@ -1,23 +1,29 @@
 <template>
   <div class="color" :style="{backgroundColor: color.name}">
     <div class="container">
-      <h1 class="title" v-text="color.name"></h1>
-      <h2 class="subtitle"><nuxt-link to="/">Back</nuxt-link></h2>
+      <h1 class="title" :style="{color: labelColor}" v-text="color.name"></h1>
+      <h2 class="subtitle">
+        <nuxt-link :style="{color: labelColor}" to="/">&larr; Back To Color Grid</nuxt-link>
+      </h2>
     </div>
   </div>
 </template>
 
 <script>
+import { setLabelColor } from '@/helpers'
+
 export default {
   asyncData({ store, params, payload }, callback) {
     let color = store.state.colors.find(color => color.name === params.color);
-    callback(null, { color });
+    let labelColor = setLabelColor(color);
+    callback(null, { color, labelColor });
   }
 };
 </script>
 
-<style>
+<style scoped>
 .container {
+  padding-top: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -29,6 +35,12 @@ export default {
   margin-right: auto;
 }
 
+.title {
+  background: none;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 2.75rem;
+}
 .subtitle {
   font-weight: 300;
   font-size: 2rem;
@@ -40,7 +52,9 @@ export default {
 }
 .subtitle a {
   text-decoration: none;
-  border-bottom: 2px solid grey;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.25rem;
 }
 .links {
   padding-top: 15px;
