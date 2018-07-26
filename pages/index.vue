@@ -2,7 +2,7 @@
   <div class="colorgrid">
     <ul class="colorgrid-list">
       <li v-for="(color, index) in colors" :key="index" class="colorgrid-item" :style="{backgroundColor: color.name}">
-        <nuxt-link class="colorgrid-item-link" :to="'/'+color.name"></nuxt-link>
+        <nuxt-link class="colorgrid-item-link" :style="{color: color.name}" :to="'/'+color.name">View {{color.name}}</nuxt-link>
       </li>
     </ul>
   </div>
