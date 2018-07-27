@@ -13,10 +13,6 @@
 import { setLabelColor } from '@/helpers';
 
 export default {
-  transition: {
-    name: 'scale2',
-    mode: 'out-in'
-  },
   async fetch({ store, params }) {
     await store.dispatch('getColorByName', params.color);
   },
@@ -47,10 +43,8 @@ export default {
   margin-right: auto;
 }
 
-.color {
-  margin-top: -2rem;
-}
 .color-name {
+  margin-top: -2rem;
   background: none;
   text-transform: capitalize;
   font-weight: 600;

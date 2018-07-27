@@ -12,6 +12,17 @@ export default {};
 </script>
 
 <style lang="css">
+
+@media (max-width: 649px) {
+  .sidebar {
+    height: 60px;
+  }
+}
+
+.sidebar {
+  background: #292929;
+}
+
 .sidebar-top {
   display: flex;
   align-items: center;

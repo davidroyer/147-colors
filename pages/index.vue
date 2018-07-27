@@ -17,10 +17,6 @@ export default {
     colors() {
       return this.$store.state.colors;
     }
-  },
-  transition: {
-    name: 'scale2',
-    mode: 'in-out'
   }
 };
 </script>
@@ -28,20 +24,37 @@ export default {
 <style>
 .colorgrid {
   position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 649px) {
+  .app-wrapper {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .colorgrid {
+    height: 100%;
+  }
+
+  .colorgrid-color-wrapper {
+    top: 60px;
+    position: fixed;
+  }
   .colorgrid.has-color-overlay {
     overflow: hidden;
     height: calc(100vh - 57px);
   }
 }
+
 .colorgrid-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-auto-rows: minmax(150px, auto);
   padding: 0;
   list-style-type: none;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .colorgrid-item {

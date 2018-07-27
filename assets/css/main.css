@@ -1,9 +1,5 @@
-.sidebar {
-  background: #292929;
-}
-
 .app-wrapper {
-  min-height: 100vh;
+  height: 100vh;
 }
 @media (min-width: 650px) {
   .app-wrapper {

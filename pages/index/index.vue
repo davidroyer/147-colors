@@ -5,11 +5,7 @@
 <script>
 export default {
   head: {
-    title: 'Please select an user'
-  },
-  transition: {
-    name: 'scale2',
-    mode: 'in-out'
+    title: 'Active Color Default Route For nuxt-child'
   }
 };
 </script>

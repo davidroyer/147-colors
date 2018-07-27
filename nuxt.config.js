@@ -16,6 +16,9 @@ module.exports = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
+  transition: {
+    name: 'scale2'
+  },
   /*
   ** Customize the progress-bar color
   */
