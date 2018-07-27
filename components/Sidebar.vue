@@ -21,5 +21,8 @@ export default {};
 .sidebar-menu-icon {
   color: white;
   padding: 0.5rem;
+  background: none;
+  cursor: pointer;
+  margin: 0 .75rem;
 }
 </style>

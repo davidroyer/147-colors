@@ -1,25 +1,10 @@
 import colors from '~/data/colors.json';
-import { times } from 'lodash';
-import chroma from 'chroma-js';
-
-const generateIcons = num => {
-  let arr = [];
-  const scale = chroma.scale('Spectral').colors(num);
-  times(num, i => {
-    arr.push({
-      color: scale[i],
-      id: `icon-${i}`
-    });
-  });
-  return arr;
-};
 
 export const state = () => ({
   menuIsActive: false,
   sidebarOpen: false,
   colors,
-  color: {},
-  icons: generateIcons(9)
+  activeColor: {}
 });
 
 export const mutations = {
@@ -40,14 +25,17 @@ export const mutations = {
   },
 
   setColor(state, payload) {
-    state.color = payload;
+    state.activeColor = payload;
   }
 };
 
 export const actions = {
-  nuxtServerInit({ commit, state }, { isDev }) {}
+  nuxtServerInit({ commit, state }, { isDev }) {},
+
+  getColorByName({ commit, state }, colorName) {
+    const color = state.colors.find(color => color.name === colorName);
+    commit('setColor', color);
+  }
 };
 
-export const getters = {
-  getIconById: state => id => state.icons.find(i => i.id === id)
-};
+export const getters = {};

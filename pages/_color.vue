@@ -10,13 +10,21 @@
 </template>
 
 <script>
-import { setLabelColor } from '@/helpers'
+import { setLabelColor } from '@/helpers';
 
 export default {
-  asyncData({ store, params, payload }, callback) {
-    let color = store.state.colors.find(color => color.name === params.color);
-    let labelColor = setLabelColor(color);
-    callback(null, { color, labelColor });
+  async fetch({ store, params }) {
+    await store.dispatch('getColorByName', params.color);
+  },
+
+  computed: {
+    color() {
+      return this.$store.state.activeColor;
+    },
+
+    labelColor() {
+      return setLabelColor(this.color);
+    }
   }
 };
 </script>

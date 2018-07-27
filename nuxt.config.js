@@ -1,7 +1,7 @@
 const pkg = require('./package');
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
   ** Headers of the page
@@ -24,12 +24,12 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~/assets/css/tailwind.css'],
+  css: ['~/assets/css/main.css'],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [{ src: '@/plugins/v-overdrive.js', ssr: false }],
+  plugins: [],
 
   /*
   ** Nuxt.js modules
