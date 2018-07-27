@@ -1,10 +1,13 @@
 <template>
-  <div class="colorgrid">
+  <div class="colorgrid" :class="{'has-color-overlay': $route.params.color}">
     <ul class="colorgrid-list">
       <li v-for="(color, index) in colors" :key="index" class="colorgrid-item" :style="{backgroundColor: color.name}">
         <nuxt-link class="colorgrid-item-link" :style="{color: color.name}" :to="'/'+color.name">View {{color.name}}</nuxt-link>
       </li>
     </ul>
+    <div class="colorgrid-color-wrapper" :class="{active: $route.params.color}">
+      <nuxt-child :key="$route.params.color"/>
+    </div>
   </div>
 </template>
 
@@ -14,14 +17,25 @@ export default {
     colors() {
       return this.$store.state.colors;
     }
+  },
+  transition: {
+    name: 'scale2',
+    mode: 'in-out'
   }
-  // transition: {
-  //   mode: 'in-out'
-  // }
 };
 </script>
 
 <style>
+.colorgrid {
+  position: relative;
+}
+
+@media (max-width: 649px) {
+  .colorgrid.has-color-overlay {
+    overflow: hidden;
+    height: calc(100vh - 57px);
+  }
+}
 .colorgrid-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -49,5 +63,19 @@ export default {
 }
 .links {
   padding-top: 15px;
+}
+
+.colorgrid-color-wrapper {
+  position: absolute;
+  z-index: 999999999;
+  top: 0;
+  right: 0;
+  left: 0;
+  /* transform: scale3d(0, 0, 0); */
+  /* transition: transform 0.45s ease-in-out; */
+}
+
+.colorgrid-color-wrapper.active {
+  /* transform: scale3d(1, 1, 1); */
 }
 </style>
