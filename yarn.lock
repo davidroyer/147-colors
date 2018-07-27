@@ -1267,10 +1267,6 @@ chownr@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.0.1.tgz#e2a75042a9551908bebd25b8523d5f9769d79181"
 
-chroma-js@^1.3.7:
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-1.3.7.tgz#38db1b46c99b002b77aa5e6b6744589388f28425"
-
 ci-info@^1.0.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-1.1.3.tgz#710193264bb05c77b8c90d02f5aaf22216a667b2"
@@ -5466,10 +5462,6 @@ querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
-ramjet@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/ramjet/-/ramjet-0.5.0.tgz#1a7a972b5c2abbc4e94c52baf778feb4b46dd50f"
-
 randomatic@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-3.0.0.tgz#d35490030eb4f7578de292ce6dfb04a91a128923"
@@ -6910,12 +6902,6 @@ vue-meta@^1.4.3:
     deepmerge "^2.0.0"
     lodash.isplainobject "^4.0.6"
     object-assign "^4.1.1"
-
-vue-overdrive@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/vue-overdrive/-/vue-overdrive-0.0.12.tgz#3433dad0c6745154537011be6c37d00e3af08b68"
-  dependencies:
-    ramjet "^0.5.0"
 
 vue-router@^3.0.1:
   version "3.0.1"
