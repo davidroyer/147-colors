@@ -15,6 +15,9 @@ export default {
       return this.$store.state.colors;
     }
   }
+  // transition: {
+  //   mode: 'in-out'
+  // }
 };
 </script>
 
